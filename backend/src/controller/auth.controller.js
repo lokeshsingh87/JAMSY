@@ -22,3 +22,24 @@ export const authCallback = async (req, res, next) => {
 		next(error);
 	}
 };
+export const deleteUser = async (req, res, next) => {
+	try {
+		const { id } = req.body;
+
+		// check if user already exists
+		const user = await User.findOne({ clerkId: id });
+
+		if (user) {
+			// signup
+			await User.deleteOne({
+				clerkId: id,
+			});
+		}
+
+		res.status(200).json({ success: true });
+	} catch (error) {
+		console.log("Error in auth callback", error);
+		next(error);
+	}
+};
+ 

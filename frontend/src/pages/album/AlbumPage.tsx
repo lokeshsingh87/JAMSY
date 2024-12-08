@@ -96,7 +96,7 @@ const AlbumPage = () => {
 							>
 								<div>#</div>
 								<div>Title</div>
-								<div>Released Date</div>
+								<div></div>
 								<div>
 									<Clock className='h-4 w-4' />
 								</div>
@@ -135,7 +135,7 @@ const AlbumPage = () => {
 														<div>{song.artist}</div>
 													</div>
 												</div>
-												<div className='flex items-center'>{song.createdAt.split("T")[0]}</div>
+												<div className='flex items-center'></div>
 												<div className='flex items-center'>{formatDuration(song.duration)}</div>
 											</div>
 										);
